@@ -12,7 +12,9 @@ public class ReverseArray {
 		int[] array = { 1, 3, 5, 7, 8 ,2};
 		
 		// Reverse array
-		reverseArray(array);
+		//reverseArray(array);
+		
+		anotherApproachRevArray(array);
 		System.out.println("Reversed Array is : "+ Arrays.toString(array));
 	}
 
@@ -42,6 +44,16 @@ public class ReverseArray {
 			
 			// Decrease LEFT side: lastIndex by -1 points to previous element
 			lastIndex--;
+		}
+	}
+	
+	private static void anotherApproachRevArray(int[] array) {
+		int mid = array.length/2;
+		int length = array.length-1;
+		for(int i=0;i<=mid;i++) {
+			int temp = array[i];
+			array[i] = array[length-i];
+			array[length-i] = temp;
 		}
 	}
 
