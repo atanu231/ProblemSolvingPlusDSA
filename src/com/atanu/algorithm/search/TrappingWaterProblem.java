@@ -19,18 +19,12 @@ public class TrappingWaterProblem {
 		rightarr[arr.length - 1] = arr[arr.length - 1];
 		// left array
 		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] > leftarr[i - 1])
-				leftarr[i] = arr[i];
-			else
-				leftarr[i] = leftarr[i - 1];
+			leftarr[i] = Math.max(arr[i], leftarr[i - 1]);
 		}
 
 		// right array
 		for (int i = arr.length - 2; i >= 0; i--) {
-			if (arr[i] > rightarr[i + 1])
-				rightarr[i] = arr[i];
-			else
-				rightarr[i] = rightarr[i + 1];
+			rightarr[i] = Math.max(arr[i], rightarr[i + 1]);
 		}
 		System.out.println(Arrays.toString(leftarr));
 		System.out.println(Arrays.toString(rightarr));
